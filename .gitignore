@@ -1,4 +1,7 @@
-./node_modules
+/node_modules
 ```
 I have tried to add the following to my .gitignore file:
 ```
+product-service/node_modules
+
+user-service/node_modules
