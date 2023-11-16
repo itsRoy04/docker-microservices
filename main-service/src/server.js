@@ -1,5 +1,5 @@
 const express = require('express');
-
+const { Router } = require('express');
 const app  = express();
 
 
@@ -7,7 +7,7 @@ app.use(express.json())
 
 
 
-const mainRouter = Router();
+const mainRouter = Router()
 
 
 

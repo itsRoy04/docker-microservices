@@ -4,7 +4,7 @@ const authMiddleware = require('./middleware/authMiddleware');
 
 const userRouter = Router();
 
-usersRouter.post("/user", async (req, res) => {
+userRouter.post("/user", async (req, res) => {
     try {
 
         console.log(req.body)
