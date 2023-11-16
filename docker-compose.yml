@@ -11,8 +11,7 @@ services:
     volumes: 
       - ./main-service:/usr/src/app
       - /usr/src/app/node_modules
-    variables:
-      DOCKER_BUILDKIT: 1
+
 
   user-service:
     build:
