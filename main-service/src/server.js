@@ -7,7 +7,7 @@ app.use(express.json())
 
 
 
-const mainRouter = Router()
+// const mainRouter = Router()
 
 
 
@@ -25,4 +25,4 @@ app.listen(3000, () => {
 })
 
 
-mainRouter.use('/', userRouter);
+// mainRouter.use('/', userRouter);
