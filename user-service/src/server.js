@@ -4,6 +4,8 @@ const app  = express();
 
 app.get('/users', (req, res) => {
     console.log("User service called");
+
+    res.send("Hello from user service");
 });
 
 app.listen(3001, () => {

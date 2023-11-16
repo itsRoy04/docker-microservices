@@ -1,12 +1,25 @@
 version: '3'
 
 services:
+  main-service:
+    build:
+      context: ./main-service
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes: 
+      - ./main-service:/usr/src/app
+      - /usr/src/app/node_modules
+
   user-service:
     build:
       context: ./user-service
       dockerfile: Dockerfile
     ports:
       - "3001:3001"
+    volumes: 
+      - ./user-service:/usr/src/app
+      - /usr/src/app/node_modules
 
   product-service:
     build:
@@ -14,3 +27,6 @@ services:
       dockerfile: Dockerfile
     ports:
       - "3002:3002"
+    volumes:
+      - ./product-service:/usr/src/app
+      - /usr/src/app/node_modules

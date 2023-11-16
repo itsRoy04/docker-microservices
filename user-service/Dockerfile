@@ -3,5 +3,5 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
 COPY /src ./src/
-CMD [ "node", "src/userController.js" ]
+CMD [ "node", "src/server.js" ]
 
