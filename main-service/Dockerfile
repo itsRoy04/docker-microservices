@@ -7,7 +7,7 @@ RUN --mount=type=bind,source=package.json,target=package.json \
     npm ci --omit=dev
 
 COPY /src ./src/
-RUN npm install -g nodemon
-CMD npm run dev
+# RUN npm install -g nodemon
+CMD npm run start 
 # CMD [ "nodemon", "src/server.js" ]
 
