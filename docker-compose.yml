@@ -32,3 +32,4 @@ services:
     volumes:
       - ./product-service:/usr/src/app
       - /usr/src/app/node_modules
+    
