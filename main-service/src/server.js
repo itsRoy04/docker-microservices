@@ -5,9 +5,9 @@ const app  = express();
 app.get('/', (req, res) => {
     console.log("Main service called");
 
-    res.send("Root Service asdase dfsdfd asdasd!");
+    res.send("Root Service!");
 });
 
-app.listen(3000, '0.0.0.0',() => {
+app.listen(3000, () => {
     console.log('Main service started on port 3000')
 })
