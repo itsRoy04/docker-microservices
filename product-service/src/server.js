@@ -4,7 +4,7 @@ const app  = express();
 
 app.get('/product', (req, res) => {
     console.log("Product service called");
-    res.send("Product from user service");
+    res.send("Product from user serviceeeeeeeeeeeeee");
 
 });
 
