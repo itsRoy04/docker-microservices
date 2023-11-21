@@ -20,9 +20,11 @@ pipeline {
             steps {
                 script {
                     // Navigate to the docker-microservice directory
-                    dir('/home/ubuntu/docker-microservices') {
+                    // dir('/home/ubuntu/docker-microservices') {
                         // Use 'withCredentials' to securely pass the GitHub access token
                         withCredentials([string(credentialsId: 'GitHubAccessToken', variable: 'ACCESS_TOKEN')]) {
+                            echo "Absolute path to workspace: ${WORKSPACE}"
+
                             // Pull the latest changes
                             echo "Access Token: ${ACCESS_TOKEN}"
                             echo "Current directory: ${pwd()}"
@@ -36,7 +38,7 @@ pipeline {
                             sh 'docker-compose up -d --build'
                             echo 'Docker Compose up successful'
                         }
-                    }
+                    // }
                 }
             }
         }
