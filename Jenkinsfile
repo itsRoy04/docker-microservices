@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        ACCESS_TOKEN = credentials('GitHubAccessToken')
+        access_token = credentials('GitHubAccessToken')
     }
 
     stages {
