@@ -2,18 +2,30 @@ pipeline {
     agent any
 
     environment {
-        access_token = credentials('GitHubAccessToken')
+        ACCESS_TOKEN = credentials('GitHubAccessToken')
     }
 
     stages {
+        stage('Debug') {
+            steps {
+                script {
+                    echo "Access Token: ${ACCESS_TOKEN}"
+                    echo "Current directory: ${pwd()}"
+                    echo "List files: ${sh(script: 'ls -la', returnStdout: true).trim()}"
+                }
+            }
+        }
+
         stage('Pull and Run') {
             steps {
                 script {
                     // Navigate to the docker-microservice directory
                     dir('/home/ubuntu/docker-microservices') {
                         // Use 'withCredentials' to securely pass the GitHub access token
-                        withCredentials([string(credentialsId: 'GitHubAccessToken', variable: 'access_token')]) {
+                        withCredentials([string(credentialsId: 'GitHubAccessToken', variable: 'ACCESS_TOKEN')]) {
                             // Pull the latest changes
+                            echo "Access Token: ${ACCESS_TOKEN}"
+                            echo "Current directory: ${pwd()}"
                             sh 'git pull origin main'
                             echo 'Pulling latest changes successful'
 
