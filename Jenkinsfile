@@ -36,6 +36,7 @@ pipeline {
 
                             // Build and run Docker containers
                             sh 'docker-compose up -d --build'
+                            sh 'docker ps'
                             echo 'Docker Compose up successful'
                         }
                     // }
