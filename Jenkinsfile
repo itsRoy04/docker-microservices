@@ -19,8 +19,8 @@ pipeline {
         stage('Pull and Run') {
             steps {
                 script {
-                    // Mount the Docker socket from the host
-                    docker.image('docker').inside('-v /var/run/docker.sock:/var/run/docker.sock') {
+                    // Navigate to the docker-microservice directory
+                    // dir('/home/ubuntu/docker-microservices') {
                         // Use 'withCredentials' to securely pass the GitHub access token
                         withCredentials([string(credentialsId: 'GitHubAccessToken', variable: 'ACCESS_TOKEN')]) {
                             echo "Absolute path to workspace: ${WORKSPACE}"
@@ -38,7 +38,7 @@ pipeline {
                             sh 'docker-compose up -d --build'
                             echo 'Docker Compose up successful'
                         }
-                    }
+                    // }
                 }
             }
         }
