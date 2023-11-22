@@ -4,7 +4,7 @@ COPY package*.json ./
 RUN --mount=type=cache,target=/root/.npm \
     npm ci --omit=dev
 
-COPY /src ./src/
+COPY . .
 # RUN npm install -g nodemon
 CMD npm run start 
 # CMD [ "nodemon", "src/server.js" ]

@@ -4,7 +4,7 @@ version: '3'
 services:
   main-service:
     build:
-      context: ./main-service
+      context: ./var/jenkins_home/workspace/docker-microservices/main-service
       dockerfile: Dockerfile
     ports:
       - "3000:3000"
@@ -15,7 +15,7 @@ services:
 
   user-service:
     build:
-      context: ./user-service
+      context: ./var/jenkins_home/workspace/docker-microservices/user-service
       dockerfile: Dockerfile
     ports:
       - "3001:3001"
@@ -25,7 +25,7 @@ services:
 
   product-service:
     build:
-      context: ./product-service
+      context: ./var/jenkins_home/workspace/docker-microservices/product-service
       dockerfile: Dockerfile
     ports:
       - "3002:3002"
