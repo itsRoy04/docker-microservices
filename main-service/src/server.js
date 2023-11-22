@@ -5,7 +5,7 @@ const app  = express();
 app.get('/', (req, res) => {
     console.log("Main service called");
 
-    res.send("Root Service Working with Jenkins!");
+    res.send("Root Service  Jenkins!");
 });
 
 app.listen(3000, () => {
