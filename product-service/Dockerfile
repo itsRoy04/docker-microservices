@@ -1,16 +1,11 @@
 FROM node:18.13.0
-
 WORKDIR /usr/src
-
-# Copy only the package.json and package-lock.json files first
 COPY package*.json ./
+RUN --mount=type=cache,target=/root/.npm \
+    npm ci --omit=dev
 
-# Install dependencies
-RUN npm install
-
-# Copy the rest of the application code
 COPY . .
+# RUN npm install -g nodemon
+CMD npm run start 
+# CMD [ "nodemon", "src/server.js" ]
 
-
-# Specify the command to run your application
-CMD ["node", "server.js"]
