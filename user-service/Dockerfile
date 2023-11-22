@@ -1,6 +1,6 @@
 FROM node:18.13.0
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src
 
 # Copy only the package.json and package-lock.json files first
 COPY package*.json ./
@@ -11,5 +11,7 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
+# Make sure the 'src' directory exists
+
 # Specify the command to run your application
-CMD ["node", "src/server.js"]
+CMD ["node", "server.js"]
