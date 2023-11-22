@@ -1,6 +1,8 @@
 pipeline {
     agent any
-
+    triggers {
+        githubPush()
+    }
     environment {
         ACCESS_TOKEN = credentials('GitHubAccessToken')
     }
