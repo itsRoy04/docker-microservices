@@ -5,7 +5,7 @@ const app  = express();
 app.get('/', (req, res) => {
     console.log("Main service called");
 
-    res.send("ROTI Servvvice asdasdddddssasdasdasddd!");
+    res.send("ROOT Servvvice asdasdddddssasdasdasddd!");
 });
 
 app.listen(3000, () => {
